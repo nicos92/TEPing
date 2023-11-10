@@ -62,6 +62,7 @@ public class TirameElPingApp extends Application {
             stage.initStyle(StageStyle.DECORATED);
             stage.setResizable(true);
             stage.setMinWidth(800);
+            //primer commit
 
             stage.setMinHeight(740); //760
             //stage.setMaxHeight(750);
