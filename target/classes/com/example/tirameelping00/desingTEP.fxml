@@ -155,7 +155,13 @@
                               <Image url="@imgs/vol.png" />
                            </image>
                         </ImageView>
-                        <JFXSlider fx:id="volume" max="80.0" onMouseClicked="#confirmVol" onMouseDragged="#setImgMute" />
+                        <JFXSlider fx:id="volume" max="80.0" onMouseClicked="#confirmVol" onMouseDragged="#setImgMute">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                           <padding>
+                              <Insets left="20.0" right="20.0" />
+                           </padding></JFXSlider>
                      </children>
                   </VBox>
                   <Separator orientation="VERTICAL" visible="false" />
