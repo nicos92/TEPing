@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXCheckBox?>
 <?import com.jfoenix.controls.JFXRadioButton?>
 <?import com.jfoenix.controls.JFXSlider?>
-<?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
@@ -12,10 +10,8 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ProgressIndicator?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.effect.Blend?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -106,6 +102,9 @@
                <effect>
                   <Blend />
                </effect>
+               <padding>
+                  <Insets bottom="7.0" left="7.0" right="7.0" top="7.0" />
+               </padding>
             </HBox>
          </top>
          <left>
@@ -171,154 +170,7 @@
          <center>
             <AnchorPane fx:id="base4" style="-fx-background-color: transparent; -fx-border-color: #000000;" BorderPane.alignment="CENTER">
                <children>
-                  <AnchorPane fx:id="ventanaPing" layoutX="57.0" layoutY="2.0" style="-fx-background-color: #fcfff1;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <Text layoutX="274.0" layoutY="223.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ejecutar Ping">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed ExtraBold" size="27.0" />
-                           </font>
-                        </Text>
-                        <Label fx:id="labelIp" layoutX="125.0" layoutY="258.0" text="Direccion IP:  ">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed ExtraBold" size="18.0" />
-                           </font>
-                        </Label>
-                        <JFXTextField fx:id="txtIP" alignment="CENTER" focusColor="#018001" layoutX="286.0" layoutY="250.0" prefHeight="26.0" prefWidth="276.0" style="-fx-text-fill: #0d7f00; -jfx-unfocus-color: #d7d3d3; -jfx-focus-color: #ffd400;" text="192.168.0.1" unFocusColor="#c9c9c9">
-                           <font>
-                              <Font name="System Bold" size="18.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                           </opaqueInsets>
-                        </JFXTextField>
-                        <JFXRadioButton fx:id="radBtn_Prueba" layoutX="111.0" layoutY="305.0" onMouseClicked="#radioButton" selected="true" text="Ping de Prueba">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed ExtraBold" size="18.0" />
-                           </font>
-                           <toggleGroup>
-                              <ToggleGroup fx:id="pingCanti" />
-                           </toggleGroup>
-                        </JFXRadioButton>
-                        <JFXRadioButton fx:id="radBtn_t" layoutX="111.0" layoutY="348.0" onMouseClicked="#radioButton" text="Ping Constante (-t)" toggleGroup="$pingCanti">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed ExtraBold" size="18.0" />
-                           </font>
-                        </JFXRadioButton>
-                        <JFXRadioButton fx:id="radBtn_n" layoutX="111.0" layoutY="394.0" onMouseClicked="#radioButton" text="Cantidad de peticiones (-n)" toggleGroup="$pingCanti">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed ExtraBold" size="18.0" />
-                           </font>
-                        </JFXRadioButton>
-                        <JFXTextField fx:id="txtCantPet" alignment="CENTER" focusColor="#4ada3a" layoutX="388.0" layoutY="380.0" prefHeight="39.0" prefWidth="232.0" promptText="Cantidad de peticiones" style="-fx-text-fill: #0d7f00; -jfx-unfocus-color: #d7d3d3; -jfx-focus-color: #ffd400;">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed ExtraBold" size="18.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXCheckBox fx:id="host_a" layoutX="125.0" layoutY="451.0" text="Nombre de host de destino (-a)">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed ExtraBold" size="18.0" />
-                           </font>
-                        </JFXCheckBox>
-                        <JFXCheckBox fx:id="pingEnTxt" layoutX="125.0" layoutY="506.0" text="Guardar Ping en archivo .txt">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed ExtraBold" size="18.0" />
-                           </font>
-                        </JFXCheckBox>
-                        <JFXTextField fx:id="txtRutaArchivo" alignment="CENTER" editable="false" layoutX="30.0" layoutY="553.0" prefHeight="28.0" prefWidth="624.0" promptText="Ruta de archivo .txt" style="-fx-text-fill: #0d7f00; -jfx-unfocus-color: #d7d3d3; -jfx-focus-color: #ffd400;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed ExtraBold" size="18.0" />
-                           </font>
-                        </JFXTextField>
-                        <JFXButton fx:id="btnIniciar" layoutX="152.0" layoutY="595.0" onMouseClicked="#onBtnIniciar" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #008302; -fx-background-radius: 10;" text="Iniciar" textFill="WHITE" AnchorPane.leftAnchor="152.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </JFXButton>
-                        <JFXButton fx:id="btnTxtSalida" layoutX="282.0" layoutY="595.0" onMouseClicked="#onVentTxtSalida" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #bebebe; -fx-background-radius: 10;" text="Ver Registro">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed Black" size="18.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </JFXButton>
-                        <JFXButton fx:id="btnDetener" disable="true" layoutX="467.0" layoutY="595.0" onMouseClicked="#onBtnDetener" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #e10000; -fx-background-radius: 10;" text="Detener" textFill="WHITE" AnchorPane.rightAnchor="174.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor>
-                        </JFXButton>
-                        <ProgressIndicator fx:id="progress" layoutX="465.0" layoutY="190.0" visible="false" />
-                        <Text fx:id="txtError" fill="#ff2121" layoutX="24.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="645.9830722808838" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="28.0">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                        </Text>
-                        <Text layoutX="314.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mi IP">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed ExtraBold" size="24.0" />
-                           </font>
-                        </Text>
-                        <Label fx:id="labelIp1" layoutX="203.0" layoutY="56.0" text="Dirección IPv4: ">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed ExtraBold" size="14.0" />
-                           </font>
-                        </Label>
-                        <JFXTextField fx:id="txtIpv4" alignment="CENTER" editable="false" focusColor="#018001" layoutX="312.0" layoutY="48.0" prefHeight="30.0" prefWidth="171.0" style="-fx-text-fill: #000000; -jfx-unfocus-color: #d7d3d3; -jfx-focus-color: #ffd400;" unFocusColor="#c9c9c9">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                           </opaqueInsets>
-                        </JFXTextField>
-                        <Label fx:id="labelIp2" layoutX="203.0" layoutY="86.0" text="Host Name: ">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed ExtraBold" size="14.0" />
-                           </font>
-                        </Label>
-                        <JFXTextField fx:id="txtHostName" alignment="CENTER" editable="false" focusColor="#018001" layoutX="292.0" layoutY="78.0" prefHeight="30.0" prefWidth="192.0" style="-fx-text-fill: #000000; -jfx-unfocus-color: #d7d3d3; -jfx-focus-color: #ffd400;" unFocusColor="#c9c9c9">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                           </opaqueInsets>
-                        </JFXTextField>
-                        <Label fx:id="labelIp3" layoutX="203.0" layoutY="119.0" text="Canonical Host Name: ">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed ExtraBold" size="14.0" />
-                           </font>
-                        </Label>
-                        <JFXTextField fx:id="txtCanoHostName" alignment="CENTER" editable="false" focusColor="#018001" layoutX="357.0" layoutY="111.0" prefHeight="30.0" prefWidth="220.0" style="-fx-text-fill: #000000; -jfx-unfocus-color: #d7d3d3; -jfx-focus-color: #ffd400;" unFocusColor="#c9c9c9">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                           </opaqueInsets>
-                        </JFXTextField>
-                        <Label fx:id="labelIp31" layoutX="203.0" layoutY="152.0" text="Direccion IP Publica:   ">
-                           <font>
-                              <Font name="Noto Sans SemiCondensed ExtraBold" size="14.0" />
-                           </font>
-                        </Label>
-                        <JFXTextField fx:id="txtIpPublic" alignment="CENTER" editable="false" focusColor="#018001" layoutX="346.0" layoutY="144.0" onMouseClicked="#saberIpPublic" prefHeight="30.0" prefWidth="171.0" style="-fx-text-fill: #000000; -jfx-unfocus-color: #d7d3d3; -jfx-focus-color: #ffd400;" unFocusColor="#c9c9c9">
-                           <font>
-                              <Font size="14.0" />
-                           </font>
-                           <opaqueInsets>
-                              <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                           </opaqueInsets>
-                        </JFXTextField>
-                     </children>
-                  </AnchorPane>
-                  <ScrollPane fx:id="scrollMultiPing" fitToHeight="true" fitToWidth="true" minViewportHeight="100.0" minViewportWidth="500.0" pannable="true" prefViewportHeight="500.0" prefViewportWidth="500.0" style="-fx-background-color: #fcfff1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <ScrollPane fx:id="scrollMultiPing" fitToHeight="true" fitToWidth="true" pannable="true" style="-fx-background-color: #fcfff1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <content>
                         <VBox fx:id="ventanaMultiPing" alignment="CENTER" style="-fx-background-color: #fcfff1;">
                            <children>
@@ -366,7 +218,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXButton fx:id="btnIniciar1" buttonType="RAISED" onMouseClicked="#btnIniciarMultiPing" style="-fx-background-color: #008302; -fx-background-radius: 10;" text="Iniciar" textAlignment="CENTER" textFill="WHITE">
+                                    <JFXButton fx:id="btnIniciar1" buttonType="RAISED" onMouseClicked="#btnIniciarMultiPing" style="-fx-background-color: #008302; -fx-background-radius: 10;" text="Iniciar" textFill="WHITE">
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
@@ -379,7 +231,7 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXButton fx:id="cont1" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
+                                    <JFXButton fx:id="cont1" buttonType="RAISED" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
                                        <font>
                                           <Font name="Arial Black" size="9.0" />
                                        </font>
@@ -415,7 +267,7 @@
                                     </VBox>
                                     <VBox alignment="CENTER">
                                        <children>
-                                          <Label text="Direccion IPv4 Nº2 " />
+                                          <Label text="Direccion IPv4 Nº2 :" />
                                           <JFXTextField fx:id="txtIP2" alignment="CENTER" focusColor="#018001" style="-fx-text-fill: #000000; -jfx-unfocus-color: #d7d3d3; -jfx-focus-color: #ffd400;" text="192.168.0.5" unFocusColor="#c9c9c9">
                                              <font>
                                                 <Font name="System Bold" size="12.0" />
@@ -459,9 +311,6 @@
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
-                                       <padding>
-                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                                       </padding>
                                     </JFXButton>
                                  </children>
                               </HBox>
@@ -525,16 +374,13 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXButton fx:id="cont3" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
+                                    <JFXButton fx:id="cont3" buttonType="RAISED" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
                                        <font>
-                                          <Font name="Arial Black" size="10.0" />
+                                          <Font name="Arial Black" size="9.0" />
                                        </font>
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
-                                       <padding>
-                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                                       </padding>
                                     </JFXButton>
                                  </children>
                               </HBox>
@@ -598,16 +444,13 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXButton fx:id="cont4" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
+                                    <JFXButton fx:id="cont4" buttonType="RAISED" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
                                        <font>
                                           <Font name="Arial Black" size="9.0" />
                                        </font>
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
-                                       <padding>
-                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                                       </padding>
                                     </JFXButton>
                                  </children>
                               </HBox>
@@ -671,16 +514,13 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXButton fx:id="cont5" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
+                                    <JFXButton fx:id="cont5" buttonType="RAISED" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
                                        <font>
                                           <Font name="Arial Black" size="9.0" />
                                        </font>
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
-                                       <padding>
-                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                                       </padding>
                                     </JFXButton>
                                  </children>
                               </HBox>
@@ -751,9 +591,6 @@
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
-                                       <padding>
-                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                                       </padding>
                                     </JFXButton>
                                  </children>
                               </HBox>
@@ -817,16 +654,13 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXButton fx:id="cont7" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
+                                    <JFXButton fx:id="cont7" buttonType="RAISED" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
                                        <font>
                                           <Font name="Arial Black" size="9.0" />
                                        </font>
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
-                                       <padding>
-                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                                       </padding>
                                     </JFXButton>
                                  </children>
                               </HBox>
@@ -890,16 +724,13 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXButton fx:id="cont8" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
+                                    <JFXButton fx:id="cont8" buttonType="RAISED" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
                                        <font>
                                           <Font name="Arial Black" size="9.0" />
                                        </font>
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
-                                       <padding>
-                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                                       </padding>
                                     </JFXButton>
                                  </children>
                               </HBox>
@@ -963,16 +794,13 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXButton fx:id="cont9" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
+                                    <JFXButton fx:id="cont9" buttonType="RAISED" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
                                        <font>
                                           <Font name="Arial Black" size="9.0" />
                                        </font>
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
-                                       <padding>
-                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                                       </padding>
                                     </JFXButton>
                                  </children>
                               </HBox>
@@ -1033,16 +861,13 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXButton fx:id="cont10" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
+                                    <JFXButton fx:id="cont10" buttonType="RAISED" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
                                        <font>
                                           <Font name="Arial Black" size="9.0" />
                                        </font>
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
-                                       <padding>
-                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                                       </padding>
                                     </JFXButton>
                                  </children>
                               </HBox>
@@ -1103,16 +928,13 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXButton fx:id="cont11" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
+                                    <JFXButton fx:id="cont11" buttonType="RAISED" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
                                        <font>
                                           <Font name="Arial Black" size="9.0" />
                                        </font>
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
-                                       <padding>
-                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                                       </padding>
                                     </JFXButton>
                                  </children>
                               </HBox>
@@ -1173,16 +995,13 @@
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
                                     </JFXButton>
-                                    <JFXButton fx:id="cont12" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
+                                    <JFXButton fx:id="cont12" buttonType="RAISED" onMouseClicked="#abrirLog" style="-fx-background-color: transparent; -fx-background-radius: 30; -fx-border-color: red; -fx-border-width: 2px; -fx-border-radius: 30;" text="000" visible="false">
                                        <font>
                                           <Font name="Arial Black" size="9.0" />
                                        </font>
                                        <cursor>
                                           <Cursor fx:constant="HAND" />
                                        </cursor>
-                                       <padding>
-                                          <Insets bottom="1.0" left="1.0" right="1.0" top="1.0" />
-                                       </padding>
                                     </JFXButton>
                                  </children>
                               </HBox>
@@ -1193,35 +1012,16 @@
                               </Text>
                               <Line startX="500.0" stroke="#cdcdcd" />
                            </children>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
                         </VBox>
                      </content>
                   </ScrollPane>
-                  <AnchorPane fx:id="ventanaTxtSalida" layoutX="59.0" layoutY="2.0" style="-fx-background-color: #fcfff1; -fx-background-radius: 20;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <VBox alignment="CENTER" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="0.0">
-                           <children>
-                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Registro de Ping">
-                                 <font>
-                                    <Font name="Noto Sans SemiCondensed ExtraBold" size="27.0" />
-                                 </font>
-                                 <VBox.margin>
-                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                                 </VBox.margin>
-                              </Text>
-                              <Separator orientation="VERTICAL" />
-                              <JFXTextArea fx:id="txtAreaSalida" editable="false" style="-fx-background-color: #f9f9f9; -fx-border-color: #Bace00; -fx-text-fill: #000000;" wrapText="true">
-                                 <font>
-                                    <Font size="14.0" />
-                                 </font>
-                              </JFXTextArea>
-                           </children>
-                           <padding>
-                              <Insets bottom="20.0" top="20.0" />
-                           </padding>
-                        </VBox>
-                     </children>
-                  </AnchorPane>
                </children>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
             </AnchorPane>
          </center>
       </BorderPane>

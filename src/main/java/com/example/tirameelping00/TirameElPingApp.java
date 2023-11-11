@@ -61,13 +61,14 @@ public class TirameElPingApp extends Application {
             stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/rj45.png"))));
             stage.initStyle(StageStyle.DECORATED);
             stage.setResizable(true);
-            stage.setMinWidth(800);
-            //primer commit
 
-            stage.setMinHeight(740); //760
-            //stage.setMaxHeight(750);
+            stage.setMinWidth(755);
+            stage.setMinHeight(350); //760
 
-            stage.setMaxWidth(855);
+            stage.setMaxWidth(755);
+            stage.setMaxHeight(830);
+            stage.setMaximized(true);
+
             scene.setFill(Color.TRANSPARENT);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
             stage.setScene(scene);

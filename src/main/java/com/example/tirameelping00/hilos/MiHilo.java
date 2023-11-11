@@ -26,7 +26,7 @@ import java.util.concurrent.locks.ReentrantLock;
 import static com.example.tirameelping00.TirameElPingController.misSonidos;
 
 
-public class MiHilo implements Runnable{
+public class MiHilo implements Runnable {
 
     @Getter
     private final int id;
@@ -40,9 +40,9 @@ public class MiHilo implements Runnable{
         this.process = process;
     }
 
-    private  Process process;
+    private Process process;
     @Getter
-    private  final TextField ip;
+    private final TextField ip;
     private final Detener detener;
     private final Slider volume;
 
@@ -62,9 +62,9 @@ public class MiHilo implements Runnable{
     private final Button btnCont;
     private int cont;
 
-    public MiHilo (int id, Process process, TextField ip, Detener detener, TextField nomIp,
-                   Text txtError, Slider volume, Button btnCont, ImageView imgNotiError, RadioButton _radBtn,
-                   Button _btnIniciar,  Button _btnDetener, Button _pos){
+    public MiHilo(int id, Process process, TextField ip, Detener detener, TextField nomIp,
+                  Text txtError, Slider volume, Button btnCont, ImageView imgNotiError, RadioButton _radBtn,
+                  Button _btnIniciar, Button _btnDetener, Button _pos) {
         this.id = id;
         this.process = process;
         this.ip = ip;
@@ -112,8 +112,8 @@ public class MiHilo implements Runnable{
     @Override
     public void run() {
 
-        try{
-            Platform.runLater(() ->{
+        try {
+            Platform.runLater(() -> {
                 desactFilaMultiPing(true);
                 detener.sendBtnDetenerMulti(true);
                 txtError.setVisible(false);
@@ -125,9 +125,9 @@ public class MiHilo implements Runnable{
             boolean notify = true;
 
             while ((inputLine = lector.readLine()) != null && !Thread.currentThread().isInterrupted()) {
-                try{
-                     notify = sendNotificacion(notify, inputLine);
-                }catch (Exception e){
+                try {
+                    notify = sendNotificacion(notify, inputLine);
+                } catch (Exception e) {
                     Platform.runLater(() -> {
                         txtError.setText("ERROR Desktop Notify: " + nomIp.getText() + " " + ip.getText() + ". Intente Nuevamente");
                         System.out.println("ERROR Desktop Notify: " + nomIp.getText() + " " + ip.getText() + " " + e.getMessage());
@@ -150,23 +150,23 @@ public class MiHilo implements Runnable{
 
             });
 
-        }catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Error Run: " + e.getMessage());
         }
     }
 
-    private  boolean sendNotificacion(boolean notify, String inputLine){
+    private boolean sendNotificacion(boolean notify, String inputLine) {
 
         lock.lock();
         try {
 
             if (inputLine.contains("Error") || inputLine.contains("agotado")) {
-                if (timeDesconex){
+                if (timeDesconex) {
                     miTiempoRestante.setFechaDesconex(FechaYhora.fechaInicioFin());
                     Log.crearArchivoLog("Fallo     - " + inputLine, nomIp.getText(), ip.getText());
                     timeDesconex = false;
                 }
-                Platform.runLater(()-> {
+                Platform.runLater(() -> {
                     styleNomIP(Style.rojoItems());
 
                     cont++;
@@ -178,7 +178,7 @@ public class MiHilo implements Runnable{
                     txtError.setFill(Color.DARKRED);
                     txtError.setText(inputLine);
 
-                    DesktopNotify.showDesktopMessage("Inaccesible a: " + nomIp.getText().toUpperCase(), "No se Puede Acceder a la Direccion: " + ip.getText(),DesktopNotify.WARNING, 5000L);
+                    DesktopNotify.showDesktopMessage("Inaccesible a: " + nomIp.getText().toUpperCase(), "No se Puede Acceder a la Direccion: " + ip.getText(), DesktopNotify.ERROR, 5000L);
                 });
 
                 misSonidos[1].setGainControl(volume.getValue());
@@ -215,7 +215,7 @@ public class MiHilo implements Runnable{
             }
 
             if (inputLine.contains("inaccesible")) {
-                if (timeDesconex){
+                if (timeDesconex) {
                     miTiempoRestante.setFechaDesconex(FechaYhora.fechaInicioFin());
                     Log.crearArchivoLog("Inacces.  - " + inputLine, nomIp.getText(), ip.getText());
                     timeDesconex = false;
@@ -232,7 +232,7 @@ public class MiHilo implements Runnable{
                     txtError.setFill(Color.DARKRED);
                     txtError.setText(inputLine);
                     DesktopNotify.showDesktopMessage("Inaccesible a: " + nomIp.getText().toUpperCase(), "No se Puede Acceder a la " +
-                            "Direccion: " + ip.getText(),DesktopNotify.WARNING, 5000L);
+                            "Direccion: " + ip.getText(), DesktopNotify.WARNING, 5000L);
                 });
 
                 misSonidos[1].setGainControl(volume.getValue());
@@ -241,7 +241,7 @@ public class MiHilo implements Runnable{
             }
 
             if (inputLine.contains("Paquetes")) {
-                Platform.runLater(() ->{
+                Platform.runLater(() -> {
                     misSonidos[0].setGainControl(volume.getValue());
                     misSonidos[0].playRun();
                     DesktopNotify.showDesktopMessage("Fin de Ping a: " + nomIp.getText().toUpperCase(), "Con la IP: " + ip.getText(),
@@ -250,19 +250,19 @@ public class MiHilo implements Runnable{
                 });
             }
 
-        }finally {
+        } finally {
             lock.unlock();
         }
 
         return notify;
     }
 
-    public void styleNomIP(String estilo){
+    public void styleNomIP(String estilo) {
         nomIp.setStyle(estilo);
         ip.setStyle(estilo);
     }
 
-    public void desactFilaMultiPing(boolean bol){
+    public void desactFilaMultiPing(boolean bol) {
         nomIp.setDisable(bol);
         ip.setDisable(bol);
         radBtn.setDisable(bol);

@@ -28,7 +28,7 @@ public class TiempoRestante {
 
     public String getDiasResto(){
 
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss.SSS");
         try {
 
             Date fecha1 = sdf.parse(conex);
@@ -46,7 +46,7 @@ public class TiempoRestante {
 
             return "Tiempo desconectado: " +  Days + " dias, "
                     + String.format("%02d", Hours) + ":" +  String.format("%02d", Minutes) + ":" +  String.format("%02d", Seconds)
-                    + "." +  MiliSeconds + " . De " + desconex + " a " + conex;
+                    + "." +  MiliSeconds + " - De " + desconex + " a " + conex;
 
         } catch (ParseException e) {
             throw new RuntimeException(e);

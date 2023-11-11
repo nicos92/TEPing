@@ -4,26 +4,21 @@ import com.example.tirameelping00.baseDatos.Basesita;
 import com.example.tirameelping00.baseDatos.NomNumIp;
 import com.example.tirameelping00.detencion.Detener;
 import com.example.tirameelping00.estilos.Style;
-import com.example.tirameelping00.hilos.EjecutarPingHilo;
 import com.example.tirameelping00.hilos.MiHilo;
 import com.example.tirameelping00.hilos.MiHiloIp;
 import com.example.tirameelping00.sonido.Sonido;
-import com.example.tirameelping00.ventana.DesactVentPing;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
@@ -32,9 +27,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.InetAddress;
-import java.net.URI;
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
@@ -83,20 +75,19 @@ public class TirameElPingController implements Initializable {
     private Button pos1, pos2, pos3, pos4, pos5, pos6, pos7, pos8, pos9, posD10, posD11, posD12;
 
     @FXML
-    private Button  btnIniciar, btnIniciar1, btnIniciar2, btnIniciar3, btnIniciar4,btnIniciar5, btnIniciar6,
-                    btnIniciar7, btnIniciar8, btnIniciar9, btnIniciarD10, btnIniciarD11, btnIniciarD12, btnIniciarTodo;
+    private Button   btnIniciar1, btnIniciar2, btnIniciar3, btnIniciar4,btnIniciar5, btnIniciar6,
+                    btnIniciar7, btnIniciar8, btnIniciar9, btnIniciarD10, btnIniciarD11, btnIniciarD12, btnIniciarTodo;//btnIniciar,
 
 
 
     @FXML
-    private Button  btnDetener, btnDetener1, btnDetener2, btnDetener3, btnDetener4, btnDetener5, btnDetener6,
-                    btnDetener7, btnDetener8, btnDetener9, btnDetenerD10, btnDetenerD11, btnDetenerD12, btnDetenerTodo;
+    private Button   btnDetener1, btnDetener2, btnDetener3, btnDetener4, btnDetener5, btnDetener6,
+                    btnDetener7, btnDetener8, btnDetener9, btnDetenerD10, btnDetenerD11, btnDetenerD12, btnDetenerTodo;//btnDetener,
 
     @FXML
     private Button cont1, cont2, cont3, cont4, cont5, cont6, cont7, cont8, cont9, cont10, cont11, cont12;
 
-    @FXML
-    private ProgressIndicator progress; //, progress1, progress2, progress3, progress4, progress5, progress6, progress7,
+    //@FXML private ProgressIndicator progress; //, progress1, progress2, progress3, progress4, progress5, progress6, progress7,
             //progress8, progress9;
     @FXML
     private TextField txtIP1, txtIP2, txtIP3, txtIP4, txtIP5, txtIP6, txtIP7, txtIP8, txtIP9, txtIP10, txtIP11, txtIP12;
@@ -104,34 +95,26 @@ public class TirameElPingController implements Initializable {
     private RadioButton radBtn_t1, radBtn_t2, radBtn_t3, radBtn_t4,radBtn_t5, radBtn_t6, radBtn_t7, radBtn_t8,
             radBtn_t9, radBtn_t10, radBtn_t11, radBtn_t12;
 
-    @FXML
-    private AnchorPane ventanaPing, ventanaTxtSalida; //mainStage
+    //@FXML private AnchorPane  ventanaTxtSalida; mainStage, ventanaPing,
 
     //@FXML private VBox ventMenu;
 
     @FXML
     private ScrollPane scrollMultiPing;
 
-    @FXML
-    private Label labelIp;
+    //@FXML private Label labelIp;
 
-    @FXML
-    private TextField txtIP, txtIpv4, txtHostName, txtCanoHostName, txtIpPublic;
+    //@FXML private TextField txtIP, txtIpv4, txtHostName, txtCanoHostName, txtIpPublic;
 
-    @FXML
-    private RadioButton radBtn_Prueba, radBtn_t, radBtn_n;
+    //@FXML private RadioButton radBtn_Prueba, radBtn_t, radBtn_n;
 
-    @FXML
-    private TextField txtCantPet;
+    //@FXML private TextField txtCantPet;
 
-    @FXML
-    private CheckBox host_a, pingEnTxt;
+    //@FXML private CheckBox host_a, pingEnTxt;
 
-    @FXML
-    private TextArea  txtAreaSalida;
+    //@FXML private TextArea  txtAreaSalida;
 
-    @FXML
-    private TextField txtRutaArchivo;
+    //@FXML private TextField txtRutaArchivo;
 
     @FXML
     private Text  txtError1, txtError2, txtError3, txtError4, txtError5, txtError6, txtError7,
@@ -172,28 +155,28 @@ public class TirameElPingController implements Initializable {
     }*/
 
     public void onVentPing(){
-        ventanaPing.setVisible(true);
+        //ventanaPing.setVisible(true);
         btnPing.setStyle(Style.ventElegida());
         btnMultiPing.setStyle(Style.ventApagada() );
         btnRegPing.setStyle(Style.ventApagada() );
 
 
-        ventanaTxtSalida.setVisible(false);
+        //ventanaTxtSalida.setVisible(false);
 
         ventBtnsTodo.setVisible(false);
         scrollMultiPing.setVisible(false);
-        txtIP.toBack();
-        radioButton();
+        //txtIP.toBack();
+        //radioButton();
 
 
     }
     public void onVentMultiPing(){
-        ventanaPing.setVisible(false);
+        //ventanaPing.setVisible(false);
         btnMultiPing.setStyle(Style.ventElegida());
         btnPing.setStyle(Style.ventApagada() );
         btnRegPing.setStyle(Style.ventApagada() );
 
-        ventanaTxtSalida.setVisible(false);
+        //ventanaTxtSalida.setVisible(false);
         ventBtnsTodo.setVisible(true);
 
         scrollMultiPing.setVisible(true);
@@ -202,11 +185,11 @@ public class TirameElPingController implements Initializable {
     }
 
     public void onVentTxtSalida(){
-        ventanaTxtSalida.setVisible(true);
+        //ventanaTxtSalida.setVisible(true);
         btnRegPing.setStyle(Style.ventElegida());
         btnPing.setStyle(Style.ventApagada() );
         btnMultiPing.setStyle(Style.ventApagada());
-        ventanaPing.setVisible(false);
+        //ventanaPing.setVisible(false);
         ventBtnsTodo.setVisible(false);
 
         scrollMultiPing.setVisible(false);
@@ -235,25 +218,25 @@ public class TirameElPingController implements Initializable {
 
     public void onBtnIniciar(){
 
-        btnIniciar.setDisable(true);
-        btnDetener.setDisable(false);
-        progress.setVisible(true);
+        //btnIniciar.setDisable(true);
+        //btnDetener.setDisable(false);
+        //progress.setVisible(true);
 
 
-        desactVentPing(true);
-        ejecutarPing();
+        //desactVentPing(true);
+        //ejecutarPing();
         //onVentTxtSalida();
     }
 
     public void onBtnDetener() {
 
-        btnIniciar.setDisable(false);
-        btnDetener.setDisable(true);
-        progress.setVisible(false);
+        //btnIniciar.setDisable(false);
+        //btnDetener.setDisable(true);
+        //progress.setVisible(false);
 
         processes[0].destroy();
         threads[0].interrupt();
-        desactVentPing(false);
+        //desactVentPing(false);
 
     }
 
@@ -290,7 +273,7 @@ public class TirameElPingController implements Initializable {
 
 
 
-    public  void ejecutarPing() {
+/*    public  void ejecutarPing() {
         try {
 
             if (threads[0] != null) threads[0].interrupt();
@@ -310,7 +293,7 @@ public class TirameElPingController implements Initializable {
         } catch (Exception n){
             System.out.println("ERROR ejecutar Ping: " + n.getMessage());
         }
-    }
+    }*/
 
     public String saberGateWay(){
         String gateway = null;
@@ -481,11 +464,11 @@ public class TirameElPingController implements Initializable {
         Platform.runLater(() -> btnTodos(false));
     }
 
-    public void radioButton(){
+/*    public void radioButton(){
         txtCantPet.setDisable(radBtn_t.isSelected() || radBtn_Prueba.isSelected());
-    }
+    }*/
 
-    public String selectRadioBtn(){
+/*    public String selectRadioBtn(){
         if (radBtn_t.isSelected()){
             return "-t";
         }
@@ -493,9 +476,9 @@ public class TirameElPingController implements Initializable {
             return "-n" + cantPeticiones();
         }
         return "-a";
-    }
+    }*/
 
-    public String cantPeticiones(){
+/*    public String cantPeticiones(){
         try{
             if (txtCantPet.getText().hashCode() == 0)return  " ";
 
@@ -505,9 +488,9 @@ public class TirameElPingController implements Initializable {
             sendAlert("Error Numerico","No es un numero entero");
         }
         return " ";
-    }
+    }*/
 
-    private void desactVentPing(boolean b) {
+/*    private void desactVentPing(boolean b) {
 
         labelIp.setDisable(b);
         txtIP.setDisable(b);
@@ -517,9 +500,9 @@ public class TirameElPingController implements Initializable {
         txtCantPet.setDisable(b);
         host_a.setDisable(b);
         pingEnTxt.setDisable(b);
-    }
+    }*/
 
-    public  void ipConfigAll() {
+/*    public  void ipConfigAll() {
 
         try {
             txtIpv4.setText( InetAddress.getLocalHost().getHostAddress());
@@ -529,10 +512,10 @@ public class TirameElPingController implements Initializable {
         } catch (IOException  e) {
             throw new RuntimeException(e);
         }
-    }
+    }*/
 
 
-    public  void saberIpPublic() {
+/*    public  void saberIpPublic() {
 
 
             if (txtIpPublic.getText().isEmpty()){
@@ -549,11 +532,11 @@ public class TirameElPingController implements Initializable {
 
             }
 
-    }
+    }*/
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        ipConfigAll();
+        //ipConfigAll();
         cargarIPS();
         creatSoundVol();
         //ejecutarMiAutoPing();
