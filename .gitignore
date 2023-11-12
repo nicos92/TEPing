@@ -1,6 +1,10 @@
 /LOG/
-/out/
+/out
 /out/artifacts/
 /out/artifacts/tirameElPing00_jar/
 /.idea/
 
+/out/artifacts/tirameElPing00_jar/tirameElPing00.jar
+*.jar
+
+P:\tirameElPing-V0\tirameElPing00\out

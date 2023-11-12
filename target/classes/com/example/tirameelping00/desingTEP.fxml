@@ -32,12 +32,6 @@
               <MenuItem fx:id="menuItemClose" mnemonicParsing="false" onAction="#exitButton" text="Close" />
             </items>
           </Menu>
-            <Menu mnemonicParsing="false" text="Ping">
-               <items>
-                  <MenuItem fx:id="menuPingInit" mnemonicParsing="false" onAction="#onBtnIniciar" text="Iniciar" />
-                  <MenuItem fx:id="menuPingDetener" mnemonicParsing="false" text="Detener" />
-               </items>
-            </Menu>
           <Menu mnemonicParsing="false" text="Multi-Ping">
             <items>
               <MenuItem fx:id="menuItemInitTodo" mnemonicParsing="false" onAction="#iniciarTodoMultiPing" text="Iniciar Todo" />
@@ -55,12 +49,6 @@
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
           </Menu>
-            <Menu fx:id="miAutoPing" mnemonicParsing="false" text="Mi AutoPing">
-               <items>
-                  <MenuItem fx:id="menuItemIniciarMiAutoPing" mnemonicParsing="false" text="Iniciar" />
-                  <MenuItem fx:id="menuItemDetenerMiAutoPing" mnemonicParsing="false" text="Detener" />
-               </items>
-            </Menu>
         </menus>
       </MenuBar>
 
