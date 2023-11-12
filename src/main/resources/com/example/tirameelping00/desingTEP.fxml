@@ -44,11 +44,6 @@
                   <MenuItem mnemonicParsing="false" onAction="#abrirLog" text="Log de Hoy" />
                </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
         </menus>
       </MenuBar>
 
@@ -107,8 +102,6 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <Separator orientation="VERTICAL" visible="false" />
-                  <Separator orientation="VERTICAL" visible="false" />
                   <Separator orientation="VERTICAL" visible="false" />
                   <JFXButton fx:id="btnMultiPing" buttonType="RAISED" onMouseClicked="#onVentMultiPing" style="-fx-border-radius: 20; -fx-background-radius: 20;" styleClass="btnMenu" stylesheets="@style.css" text="Multi-Ping">
                      <font>

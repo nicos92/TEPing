@@ -44,11 +44,6 @@
                   <MenuItem mnemonicParsing="false" onAction="#abrirLog" text="Log de Hoy" />
                </items>
             </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
         </menus>
       </MenuBar>
 

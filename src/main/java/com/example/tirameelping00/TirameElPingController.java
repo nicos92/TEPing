@@ -97,141 +97,21 @@ public class TirameElPingController implements Initializable {
     @FXML
     private ScrollPane scrollMultiPing;
 
-    //@FXML private Label labelIp;
-
-    //@FXML private TextField txtIP, txtIpv4, txtHostName, txtCanoHostName, txtIpPublic;
-
-    //@FXML private RadioButton radBtn_Prueba, radBtn_t, radBtn_n;
-
-    //@FXML private TextField txtCantPet;
-
-    //@FXML private CheckBox host_a, pingEnTxt;
-
-    //@FXML private TextArea  txtAreaSalida;
-
-    //@FXML private TextField txtRutaArchivo;
-
     @FXML
     private Text  txtError1, txtError2, txtError3, txtError4, txtError5, txtError6, txtError7,
             txtError8, txtError9, txtError10, txtError11, txtError12;
 
 
-
-    //@FXML private Menu miAutoPing;
-
-    //@FXML private MenuItem menuItemIniciarMiAutoPing;
-
-    /*    @FXML
-    private void onMinimize(){
-
-        ((Stage) base1.getScene().getWindow()).setIconified(true);
-    }
-
-       public void enteredImageMinus(){
-        Image image1 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/icons8-minus-64.png")));
-        minus.setImage(image1);
-    }
-
-    public void exitedImageMinus(){
-        Image image1 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/icons8-minus-sign-96.png")));
-        minus.setImage(image1);
-    }
-
-    public void enteredImageClose(){
-        Image image1 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/close1.png")));
-        close.setImage(image1);
-    }
-
-    public void exitedImageClose(){
-        Image image1 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/close2.png")));
-        close.setImage(image1);
-    }*/
-
-/*    public void onVentPing(){
-        //ventanaPing.setVisible(true);
-        //btnPing.setStyle(Style.ventElegida());
-        btnMultiPing.setStyle(Style.ventApagada() );
-        //btnRegPing.setStyle(Style.ventApagada() );
-
-
-        //ventanaTxtSalida.setVisible(false);
-
-        ventBtnsTodo.setVisible(false);
-        scrollMultiPing.setVisible(false);
-        //txtIP.toBack();
-        //radioButton();
-
-
-    }*/
     public void onVentMultiPing(){
         //ventanaPing.setVisible(false);
         btnMultiPing.setStyle(Style.ventElegida());
-        //btnPing.setStyle(Style.ventApagada() );
-        //btnRegPing.setStyle(Style.ventApagada() );
 
-        //ventanaTxtSalida.setVisible(false);
         ventBtnsTodo.setVisible(true);
 
         scrollMultiPing.setVisible(true);
 
 
     }
-
-/*    public void onVentTxtSalida(){
-        //ventanaTxtSalida.setVisible(true);
-        //btnRegPing.setStyle(Style.ventElegida());
-        //btnPing.setStyle(Style.ventApagada() );
-        btnMultiPing.setStyle(Style.ventApagada());
-        //ventanaPing.setVisible(false);
-        ventBtnsTodo.setVisible(false);
-
-        scrollMultiPing.setVisible(false);
-    }*/
-
-/*   public void cerrarVentMenu(){
-        btnPing.setVisible(false);
-        btnMultiPing.setVisible(false);
-        btnRegPing.setVisible(false);
-        //lblVolume.setVisible(false);
-        volume.setVisible(false);
-        imgVol.setVisible(false);
-        ventMenu.prefWidthProperty().bind(mainStage.getScene().getWindow().widthProperty().multiply(0.03));
-    }
-
-    public void abrirVentMenu(){
-        btnPing.setVisible(true);
-        btnMultiPing.setVisible(true);
-        btnRegPing.setVisible(true);
-        //lblVolume.setVisible(true);
-        imgVol.setVisible(true);
-        volume.setVisible(true);
-
-        ventMenu.prefWidthProperty().bind(mainStage.getScene().getWindow().widthProperty().multiply(0.17));
-    }*/
-
-    public void onBtnIniciar(){
-
-        //btnIniciar.setDisable(true);
-        //btnDetener.setDisable(false);
-        //progress.setVisible(true);
-
-
-        //desactVentPing(true);
-        //ejecutarPing();
-        //onVentTxtSalida();
-    }
-
-/*    public void onBtnDetener() {
-
-        //btnIniciar.setDisable(false);
-        //btnDetener.setDisable(true);
-        //progress.setVisible(false);
-
-        processes[0].destroy();
-        threads[0].interrupt();
-        //desactVentPing(false);
-
-    }*/
 
     public void setImgMute(){
         //Sonido.setGainControl(volume.getValue());
@@ -264,94 +144,6 @@ public class TirameElPingController implements Initializable {
         misSonidos[0].playRun();
     }
 
-
-
-/*    public  void ejecutarPing() {
-        try {
-
-            if (threads[0] != null) threads[0].interrupt();
-
-            String[] pingCmd = {"ping",  txtIP.getText() ,selectRadioBtn()};
-            //r = Runtime.getRuntime();
-            processes[0] = Runtime.getRuntime().exec(pingCmd);
-
-            DesactVentPing desactPing = new DesactVentPing(labelIp,txtIP,radBtn_Prueba,radBtn_t,radBtn_n,txtCantPet, host_a,pingEnTxt);
-            EjecutarPingHilo runClass = new EjecutarPingHilo(processes[0], txtIP.getText(), pingEnTxt.isSelected(), txtAreaSalida,
-                    txtRutaArchivo, desactPing, btnIniciar, btnDetener, progress, volume);
-
-            //340480_ATf movistar club
-            threads[0] = new Thread(runClass);
-            threads[0].start();
-
-        } catch (Exception n){
-            System.out.println("ERROR ejecutar Ping: " + n.getMessage());
-        }
-    }*/
-/*
-    public String saberGateWay(){
-        String gateway = null;
-        try{
-
-            String[] cmdgateway = {"netstat","-rn"};
-            Process result = Runtime.getRuntime().exec(cmdgateway);
-
-            BufferedReader output = new BufferedReader(new InputStreamReader(result.getInputStream()));
-
-            String line = output.readLine();
-            while(line != null){
-                if ( line.trim().startsWith("default") || line.trim().startsWith("0.0.0.0"))
-                    break;
-                line = output.readLine();
-            }
-            if(line==null) //gateway not found;
-                return "8.8.8.8";
-
-            StringTokenizer st = new StringTokenizer( line );
-            st.nextToken();
-            st.nextToken();
-            gateway = st.nextToken();
-            result.destroy();
-
-
-        } catch( Exception e ) {
-            System.out.println("saber gateway: " + e.getMessage());
-        }
-
-        assert gateway != null;
-        if (!gateway.equals("::1:")){
-            return gateway;
-        }else return "";
-    }
-   public  void ejecutarMiAutoPing() {
-        try {
-
-            Text[] misTxtError = {txtError1, txtError2, txtError3, txtError4, txtError5, txtError6, txtError7,
-                    txtError8, txtError9, txtError10, txtError11, txtError12};
-            menuItemIniciarMiAutoPing.setDisable(true);
-            int idx = threads.length -1;
-            if (threads[idx] != null) threads[13].interrupt();
-
-            String ip = saberGateWay();
-            String[] pingCmd = {"ping", ip, "-t"};
-
-            processes[idx] = Runtime.getRuntime().exec(pingCmd);
-            MiHiloIp miHiloIp = new MiHiloIp(processes[idx], volume, miAutoPing, misTxtError, ip);
-
-            threads[idx] = new Thread(miHiloIp);
-            threads[idx].start();
-
-        } catch (Exception n){
-            System.out.println("ERROR ejecutar Mi Auto Ping: " + n.getMessage());
-        }
-    }
-
-    public  void detenerMiAutoPing(){
-        miAutoPing.setStyle("-fx-background-color: #ff6666");
-        menuItemIniciarMiAutoPing.setDisable(false);
-
-        threads[13].interrupt();
-        processes[13].destroy();
-    }*/
 
     public  void ejecutarMultiPing(int id, TextField _txtIP, Button _btnIniciar, Button _btnDetener,
                                     RadioButton _radBtn, TextField _nomIp, Text _txtError, Button _pos, Button _cont) {
@@ -457,96 +249,16 @@ public class TirameElPingController implements Initializable {
         Platform.runLater(() -> btnTodos(false));
     }
 
-/*    public void radioButton(){
-        txtCantPet.setDisable(radBtn_t.isSelected() || radBtn_Prueba.isSelected());
-    }*/
 
-/*    public String selectRadioBtn(){
-        if (radBtn_t.isSelected()){
-            return "-t";
-        }
-        if (radBtn_n.isSelected()){
-            return "-n" + cantPeticiones();
-        }
-        return "-a";
-    }*/
-
-/*    public String cantPeticiones(){
-        try{
-            if (txtCantPet.getText().hashCode() == 0)return  " ";
-
-            int cant = Integer.parseInt(txtCantPet.getText());
-            return " " + cant + " ";
-        }catch (NumberFormatException n){
-            sendAlert("Error Numerico","No es un numero entero");
-        }
-        return " ";
-    }*/
-
-/*    private void desactVentPing(boolean b) {
-
-        labelIp.setDisable(b);
-        txtIP.setDisable(b);
-        radBtn_Prueba.setDisable(b);
-        radBtn_t.setDisable(b);
-        radBtn_n.setDisable(b);
-        txtCantPet.setDisable(b);
-        host_a.setDisable(b);
-        pingEnTxt.setDisable(b);
-    }*/
-
-/*    public  void ipConfigAll() {
-
-        try {
-            txtIpv4.setText( InetAddress.getLocalHost().getHostAddress());
-            txtHostName.setText( InetAddress.getLocalHost().getHostName());
-            txtCanoHostName.setText( InetAddress.getLocalHost().getCanonicalHostName());
-
-        } catch (IOException  e) {
-            throw new RuntimeException(e);
-        }
-    }*/
-
-
-/*    public  void saberIpPublic() {
-
-
-            if (txtIpPublic.getText().isEmpty()){
-
-                try {
-
-                    URL url_name = new URI("http://myexternalip.com/raw").toURL();
-                    BufferedReader sc = new BufferedReader(new InputStreamReader(url_name.openStream()));
-                    // reads system IPAddress
-                    txtIpPublic.setText( sc.readLine().trim());
-                } catch (IOException | URISyntaxException e) {
-                    sendAlert("No se obtener IP Publica: " , e.getMessage());
-                }
-
-            }
-
-    }*/
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         //ipConfigAll();
         cargarIPS();
         creatSoundVol();
-        //ejecutarMiAutoPing();
 
-        //btnPing.setOnAction(a -> onVentPing());
         btnMultiPing.setOnAction(a -> onVentMultiPing());
         //btnRegPing.setOnAction(a -> onVentTxtSalida());
-
-        /*
-            volume.addEventHandler(MouseEvent.MOUSE_DRAGGED, (e) ->{
-
-                sonido.setGainControl(volume.getValue());
-                for (Sonido son : sonidos){
-                    if (son != null)son.setGainControl(volume.getValue());
-                }
-            });
-        */
 
 
         Platform.setImplicitExit(false);

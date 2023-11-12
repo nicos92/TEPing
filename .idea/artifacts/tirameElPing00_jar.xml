@@ -2,7 +2,7 @@
   <artifact type="jar" name="tirameElPing00:jar">
     <output-path>$PROJECT_DIR$/out/artifacts/tirameElPing00_jar</output-path>
     <root id="archive" name="tirameElPing00.jar">
-      <element id="module-output" name="tirameElPing00" />
+      <element id="module-output" name="tirameElPing" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-swing/19/javafx-swing-19-win.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$PROJECT_DIR$/jfoenix-9.0.0.jar" path-in-jar="/" />
       <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/openjfx/javafx-controls/21/javafx-controls-21.jar" path-in-jar="/" />
