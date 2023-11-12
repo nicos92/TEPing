@@ -35,7 +35,7 @@
             <Menu mnemonicParsing="false" text="Ping">
                <items>
                   <MenuItem fx:id="menuPingInit" mnemonicParsing="false" onAction="#onBtnIniciar" text="Iniciar" />
-                  <MenuItem fx:id="menuPingDetener" mnemonicParsing="false" onAction="#onBtnDetener" text="Detener" />
+                  <MenuItem fx:id="menuPingDetener" mnemonicParsing="false" text="Detener" />
                </items>
             </Menu>
           <Menu mnemonicParsing="false" text="Multi-Ping">
@@ -57,14 +57,14 @@
           </Menu>
             <Menu fx:id="miAutoPing" mnemonicParsing="false" text="Mi AutoPing">
                <items>
-                  <MenuItem fx:id="menuItemIniciarMiAutoPing" mnemonicParsing="false" onAction="#ejecutarMiAutoPing" text="Iniciar" />
-                  <MenuItem fx:id="menuItemDetenerMiAutoPing" mnemonicParsing="false" onAction="#detenerMiAutoPing" text="Detener" />
+                  <MenuItem fx:id="menuItemIniciarMiAutoPing" mnemonicParsing="false" text="Iniciar" />
+                  <MenuItem fx:id="menuItemDetenerMiAutoPing" mnemonicParsing="false" text="Detener" />
                </items>
             </Menu>
         </menus>
       </MenuBar>
 
-      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
+      <BorderPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
          <top>
             <HBox fx:id="ventBtnsTodo" alignment="CENTER" spacing="20.0" BorderPane.alignment="CENTER">
                <children>
@@ -120,23 +120,7 @@
                      </cursor>
                   </JFXButton>
                   <Separator orientation="VERTICAL" visible="false" />
-                  <JFXButton fx:id="btnPing" buttonType="RAISED" onMouseClicked="#onVentPing" style="-fx-border-radius: 20; -fx-background-radius: 20;" styleClass="btnMenu" stylesheets="@style.css" text="Ping" textAlignment="CENTER">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </JFXButton>
                   <Separator orientation="VERTICAL" visible="false" />
-                  <JFXButton fx:id="btnRegPing" buttonType="RAISED" onMouseClicked="#onVentTxtSalida" style="-fx-border-radius: 20; -fx-background-radius: 20;" styleClass="btnMenu" stylesheets="@style.css" text="Reg. Ping">
-                     <font>
-                        <Font name="System Bold" size="14.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </JFXButton>
                   <Separator orientation="VERTICAL" visible="false" />
                   <JFXButton fx:id="btnMultiPing" buttonType="RAISED" onMouseClicked="#onVentMultiPing" style="-fx-border-radius: 20; -fx-background-radius: 20;" styleClass="btnMenu" stylesheets="@style.css" text="Multi-Ping">
                      <font>
@@ -172,9 +156,9 @@
                <children>
                   <ScrollPane fx:id="scrollMultiPing" fitToHeight="true" fitToWidth="true" pannable="true" style="-fx-background-color: #fcfff1;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <content>
-                        <VBox fx:id="ventanaMultiPing" alignment="CENTER" style="-fx-background-color: #fcfff1;">
+                        <VBox fx:id="ventanaMultiPing" alignment="CENTER" spacing="1.0" style="-fx-background-color: #fcfff1;">
                            <children>
-                              <HBox alignment="CENTER" spacing="4.0">
+                              <HBox alignment="BOTTOM_CENTER" spacing="4.0">
                                  <children>
                                     <VBox alignment="CENTER">
                                        <children>
@@ -249,8 +233,8 @@
                                     <Font name="System Bold" size="10.0" />
                                  </font>
                               </Text>
-                              <Line fill="BLACK" startX="500.0" stroke="#cdcdcd" strokeMiterLimit="0.0" />
-                              <HBox alignment="CENTER" spacing="4.0">
+                              <Line fill="BLACK" startX="530.0" stroke="#8d8888" strokeMiterLimit="0.0" />
+                              <HBox alignment="BOTTOM_CENTER" spacing="4.0">
                                  <children>
                                     <VBox alignment="CENTER">
                                        <children>
@@ -319,8 +303,8 @@
                                     <Font name="System Bold" size="10.0" />
                                  </font>
                               </Text>
-                              <Line startX="500.0" stroke="#cdcdcd" />
-                              <HBox alignment="CENTER" spacing="4.0">
+                              <Line startX="530.0" stroke="#8d8888" />
+                              <HBox alignment="BOTTOM_CENTER" spacing="4.0">
                                  <children>
                                     <VBox alignment="CENTER">
                                        <children>
@@ -389,8 +373,8 @@
                                     <Font name="System Bold" size="10.0" />
                                  </font>
                               </Text>
-                              <Line startX="500.0" stroke="#cdcdcd" />
-                              <HBox alignment="CENTER" spacing="4.0">
+                              <Line startX="530.0" stroke="#8d8888" />
+                              <HBox alignment="BOTTOM_CENTER" spacing="4.0">
                                  <children>
                                     <VBox alignment="CENTER">
                                        <children>
@@ -459,8 +443,8 @@
                                     <Font name="System Bold" size="10.0" />
                                  </font>
                               </Text>
-                              <Line startX="500.0" stroke="#cdcdcd" />
-                              <HBox alignment="CENTER" spacing="4.0">
+                              <Line startX="530.0" stroke="#8d8888" />
+                              <HBox alignment="BOTTOM_CENTER" spacing="4.0">
                                  <children>
                                     <VBox alignment="CENTER">
                                        <children>
@@ -529,8 +513,8 @@
                                     <Font name="System Bold" size="10.0" />
                                  </font>
                               </Text>
-                              <Line startX="500.0" stroke="#cdcdcd" />
-                              <HBox alignment="CENTER" spacing="4.0">
+                              <Line startX="530.0" stroke="#8d8888" />
+                              <HBox alignment="BOTTOM_CENTER" spacing="4.0">
                                  <children>
                                     <VBox alignment="CENTER">
                                        <children>
@@ -599,8 +583,8 @@
                                     <Font name="System Bold" size="10.0" />
                                  </font>
                               </Text>
-                              <Line startX="500.0" stroke="#cdcdcd" />
-                              <HBox alignment="CENTER" spacing="4.0">
+                              <Line startX="530.0" stroke="#8d8888" />
+                              <HBox alignment="BOTTOM_CENTER" spacing="4.0">
                                  <children>
                                     <VBox alignment="CENTER">
                                        <children>
@@ -669,8 +653,8 @@
                                     <Font name="System Bold" size="10.0" />
                                  </font>
                               </Text>
-                              <Line startX="500.0" stroke="#cdcdcd" />
-                              <HBox alignment="CENTER" spacing="4.0">
+                              <Line startX="530.0" stroke="#8d8888" />
+                              <HBox alignment="BOTTOM_CENTER" spacing="4.0">
                                  <children>
                                     <VBox alignment="CENTER">
                                        <children>
@@ -739,8 +723,8 @@
                                     <Font name="System Bold" size="10.0" />
                                  </font>
                               </Text>
-                              <Line startX="500.0" stroke="#cdcdcd" />
-                              <HBox alignment="CENTER" spacing="4.0">
+                              <Line startX="530.0" stroke="#8d8888" />
+                              <HBox alignment="BOTTOM_CENTER" spacing="4.0">
                                  <children>
                                     <VBox alignment="CENTER">
                                        <children>
@@ -809,8 +793,8 @@
                                     <Font name="System Bold" size="10.0" />
                                  </font>
                               </Text>
-                              <Line startX="500.0" stroke="#cdcdcd" />
-                              <HBox alignment="CENTER" spacing="4.0">
+                              <Line startX="530.0" stroke="#8d8888" />
+                              <HBox alignment="BOTTOM_CENTER" spacing="4.0">
                                  <children>
                                     <VBox alignment="CENTER">
                                        <children>
@@ -876,8 +860,8 @@
                                     <Font name="System Bold" size="10.0" />
                                  </font>
                               </Text>
-                              <Line startX="500.0" stroke="#cdcdcd" />
-                              <HBox alignment="CENTER" spacing="4.0">
+                              <Line startX="530.0" stroke="#8d8888" />
+                              <HBox alignment="BOTTOM_CENTER" spacing="4.0">
                                  <children>
                                     <VBox alignment="CENTER">
                                        <children>
@@ -943,8 +927,8 @@
                                     <Font name="System Bold" size="10.0" />
                                  </font>
                               </Text>
-                              <Line startX="500.0" stroke="#cdcdcd" />
-                              <HBox alignment="CENTER" spacing="4.0">
+                              <Line startX="530.0" stroke="#8d8888" />
+                              <HBox alignment="BOTTOM_CENTER" spacing="4.0">
                                  <children>
                                     <VBox alignment="CENTER">
                                        <children>
@@ -1010,7 +994,7 @@
                                     <Font name="System Bold" size="10.0" />
                                  </font>
                               </Text>
-                              <Line startX="500.0" stroke="#cdcdcd" />
+                              <Line startX="530.0" stroke="#8d8888" />
                            </children>
                            <padding>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

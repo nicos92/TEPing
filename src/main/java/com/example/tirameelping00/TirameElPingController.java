@@ -5,14 +5,11 @@ import com.example.tirameelping00.baseDatos.NomNumIp;
 import com.example.tirameelping00.detencion.Detener;
 import com.example.tirameelping00.estilos.Style;
 import com.example.tirameelping00.hilos.MiHilo;
-import com.example.tirameelping00.hilos.MiHiloIp;
 import com.example.tirameelping00.sonido.Sonido;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.Menu;
-import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.control.*;
@@ -23,10 +20,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 
 import java.awt.*;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.List;
@@ -66,7 +61,7 @@ public class TirameElPingController implements Initializable {
      private Slider volume;
 
     @FXML
-    private Button btnMultiPing, btnRegPing, btnPing;
+    private Button btnMultiPing; //, btnRegPing, btnPing;
 
     @FXML
     private TextField nomIp1, nomIp2, nomIp3, nomIp4, nomIp5, nomIp6, nomIp7, nomIp8, nomIp9, nomIp10, nomIp11, nomIp12;
@@ -122,11 +117,9 @@ public class TirameElPingController implements Initializable {
 
 
 
-    @FXML
-    private Menu miAutoPing;
+    //@FXML private Menu miAutoPing;
 
-    @FXML
-    private MenuItem menuItemIniciarMiAutoPing;
+    //@FXML private MenuItem menuItemIniciarMiAutoPing;
 
     /*    @FXML
     private void onMinimize(){
@@ -154,11 +147,11 @@ public class TirameElPingController implements Initializable {
         close.setImage(image1);
     }*/
 
-    public void onVentPing(){
+/*    public void onVentPing(){
         //ventanaPing.setVisible(true);
-        btnPing.setStyle(Style.ventElegida());
+        //btnPing.setStyle(Style.ventElegida());
         btnMultiPing.setStyle(Style.ventApagada() );
-        btnRegPing.setStyle(Style.ventApagada() );
+        //btnRegPing.setStyle(Style.ventApagada() );
 
 
         //ventanaTxtSalida.setVisible(false);
@@ -169,12 +162,12 @@ public class TirameElPingController implements Initializable {
         //radioButton();
 
 
-    }
+    }*/
     public void onVentMultiPing(){
         //ventanaPing.setVisible(false);
         btnMultiPing.setStyle(Style.ventElegida());
-        btnPing.setStyle(Style.ventApagada() );
-        btnRegPing.setStyle(Style.ventApagada() );
+        //btnPing.setStyle(Style.ventApagada() );
+        //btnRegPing.setStyle(Style.ventApagada() );
 
         //ventanaTxtSalida.setVisible(false);
         ventBtnsTodo.setVisible(true);
@@ -184,16 +177,16 @@ public class TirameElPingController implements Initializable {
 
     }
 
-    public void onVentTxtSalida(){
+/*    public void onVentTxtSalida(){
         //ventanaTxtSalida.setVisible(true);
-        btnRegPing.setStyle(Style.ventElegida());
-        btnPing.setStyle(Style.ventApagada() );
+        //btnRegPing.setStyle(Style.ventElegida());
+        //btnPing.setStyle(Style.ventApagada() );
         btnMultiPing.setStyle(Style.ventApagada());
         //ventanaPing.setVisible(false);
         ventBtnsTodo.setVisible(false);
 
         scrollMultiPing.setVisible(false);
-    }
+    }*/
 
 /*   public void cerrarVentMenu(){
         btnPing.setVisible(false);
@@ -228,7 +221,7 @@ public class TirameElPingController implements Initializable {
         //onVentTxtSalida();
     }
 
-    public void onBtnDetener() {
+/*    public void onBtnDetener() {
 
         //btnIniciar.setDisable(false);
         //btnDetener.setDisable(true);
@@ -238,7 +231,7 @@ public class TirameElPingController implements Initializable {
         threads[0].interrupt();
         //desactVentPing(false);
 
-    }
+    }*/
 
     public void setImgMute(){
         //Sonido.setGainControl(volume.getValue());
@@ -294,7 +287,7 @@ public class TirameElPingController implements Initializable {
             System.out.println("ERROR ejecutar Ping: " + n.getMessage());
         }
     }*/
-
+/*
     public String saberGateWay(){
         String gateway = null;
         try{
@@ -329,7 +322,7 @@ public class TirameElPingController implements Initializable {
             return gateway;
         }else return "";
     }
-    public  void ejecutarMiAutoPing() {
+   public  void ejecutarMiAutoPing() {
         try {
 
             Text[] misTxtError = {txtError1, txtError2, txtError3, txtError4, txtError5, txtError6, txtError7,
@@ -358,7 +351,7 @@ public class TirameElPingController implements Initializable {
 
         threads[13].interrupt();
         processes[13].destroy();
-    }
+    }*/
 
     public  void ejecutarMultiPing(int id, TextField _txtIP, Button _btnIniciar, Button _btnDetener,
                                     RadioButton _radBtn, TextField _nomIp, Text _txtError, Button _pos, Button _cont) {
@@ -541,9 +534,9 @@ public class TirameElPingController implements Initializable {
         creatSoundVol();
         //ejecutarMiAutoPing();
 
-        btnPing.setOnAction(a -> onVentPing());
+        //btnPing.setOnAction(a -> onVentPing());
         btnMultiPing.setOnAction(a -> onVentMultiPing());
-        btnRegPing.setOnAction(a -> onVentTxtSalida());
+        //btnRegPing.setOnAction(a -> onVentTxtSalida());
 
         /*
             volume.addEventHandler(MouseEvent.MOUSE_DRAGGED, (e) ->{

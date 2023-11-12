@@ -22,10 +22,10 @@ import static com.example.tirameelping00.TirameElPingController.*;
 public class TirameElPingApp extends Application {
 
 
-
     FXTrayIcon trayIcon;
     double yOffset;
     double xOffset;
+
     @Override
     public void start(Stage stage) throws IOException {
 
@@ -41,9 +41,9 @@ public class TirameElPingApp extends Application {
         detenerTodo.setOnAction(e -> closeThreadProcess());
 
         MenuItem miOff = new MenuItem("Cerrar App");
-        miOff.setOnAction(e -> cerrarApp()) ;
+        miOff.setOnAction(e -> cerrarApp());
 
-        trayIcon.addMenuItems( detenerTodo, miOff);
+        trayIcon.addMenuItems(detenerTodo, miOff);
 
         root.setOnMousePressed(event -> {
             xOffset = event.getSceneX();
@@ -55,7 +55,7 @@ public class TirameElPingApp extends Application {
             stage.setY(event.getScreenY() - yOffset);
         });
 
-        try{
+        try {
             Scene scene = new Scene(root);
             stage.setTitle("Tirame El Ping");
             stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResourceAsStream("imgs/rj45.png"))));
@@ -66,14 +66,15 @@ public class TirameElPingApp extends Application {
             stage.setMinHeight(350); //760
 
             stage.setMaxWidth(755);
-            stage.setMaxHeight(830);
+            stage.setMaxHeight(768);
             stage.setMaximized(true);
+
 
             scene.setFill(Color.TRANSPARENT);
             scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("style.css")).toString());
             stage.setScene(scene);
             stage.show();
-        }catch (Exception e){
+        } catch (Exception e) {
             System.out.println("ERROR start: " + e.getMessage());
         }
 
@@ -86,13 +87,13 @@ public class TirameElPingApp extends Application {
     }
 
     private static void closeThreadProcess() {
-        for (Sonido s: misSonidos) if (s != null)s.closeSonido();
+        for (Sonido s : misSonidos) if (s != null) s.closeSonido();
 
-        for (Thread t : threads){
-            if (t !=  null && t.isAlive())t.interrupt();
+        for (Thread t : threads) {
+            if (t != null && t.isAlive()) t.interrupt();
         }
-        for (Process p: processes){
-            if (p != null)p.destroy();
+        for (Process p : processes) {
+            if (p != null) p.destroy();
         }
 
     }
