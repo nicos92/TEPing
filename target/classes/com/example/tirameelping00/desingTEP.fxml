@@ -91,7 +91,7 @@
             </HBox>
          </top>
          <left>
-            <VBox fx:id="ventMenu" nodeOrientation="LEFT_TO_RIGHT" style="-fx-border-color: #000000; -fx-border-width: 2px 2px 2px 2px; -fx-background-color: #FFFBF1; -fx-border-radius: 0 0 0 4;" BorderPane.alignment="CENTER">
+            <VBox fx:id="ventMenu" alignment="TOP_CENTER" style="-fx-border-color: #000000; -fx-border-width: 2px 2px 2px 2px; -fx-background-color: #FFFBF1; -fx-border-radius: 0 0 0 4;" BorderPane.alignment="CENTER">
                <children>
                   <Separator orientation="VERTICAL" visible="false" />
                   <JFXButton fx:id="btnMenu" buttonType="RAISED" style="-fx-border-radius: 20; -fx-background-radius: 20;" styleClass="btnMenu" text="Menú">
@@ -102,8 +102,6 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </JFXButton>
-                  <Separator orientation="VERTICAL" visible="false" />
-                  <Separator orientation="VERTICAL" visible="false" />
                   <Separator orientation="VERTICAL" visible="false" />
                   <JFXButton fx:id="btnMultiPing" buttonType="RAISED" onMouseClicked="#onVentMultiPing" style="-fx-border-radius: 20; -fx-background-radius: 20;" styleClass="btnMenu" stylesheets="@style.css" text="Multi-Ping">
                      <font>
